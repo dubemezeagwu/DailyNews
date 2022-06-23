@@ -17,6 +17,7 @@ abstract class ArticleDatabase: RoomDatabase() {
     abstract fun  getArticlesDao(): ArticleDao
 
     companion object {
+        @Volatile
         private var instance: ArticleDatabase? = null
         private val LOCK = Any()
 
