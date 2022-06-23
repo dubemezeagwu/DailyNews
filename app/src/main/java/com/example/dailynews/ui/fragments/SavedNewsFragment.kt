@@ -6,14 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.dailynews.R
+import com.example.dailynews.ui.activities.NewsActivity
+import com.example.dailynews.viewmodels.NewsViewModel
 
 class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-    }
+    lateinit var viewModel: NewsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -23,4 +20,8 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
         return inflater.inflate(R.layout.fragment_saved_news, container, false)
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        viewModel = (activity as NewsActivity).viewModel
+    }
 }
