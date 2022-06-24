@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.example.dailynews.R
+import com.example.dailynews.adapters.NewsAdapter
 import com.example.dailynews.database.ArticleDatabase
 import com.example.dailynews.databinding.ActivityNewsBinding
 import com.example.dailynews.repository.NewsRepository
@@ -32,9 +33,7 @@ class NewsActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(binding.navHostFragment.id) as NavHostFragment
         binding.bottomNavigationView.setupWithNavController(navHostFragment.navController)
 //        binding.bottomNavigationView.setupWithNavController(binding.navHostFragment.findNavController())
-
-
-
-
     }
+
+
 }
