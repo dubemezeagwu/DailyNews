@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.dailynews.R
@@ -14,6 +15,7 @@ import com.example.dailynews.adapters.NewsAdapter
 import com.example.dailynews.ui.activities.NewsActivity
 import com.example.dailynews.utils.Resource
 import com.example.dailynews.viewmodels.NewsViewModel
+import kotlinx.android.synthetic.main.activity_news.*
 import kotlinx.android.synthetic.main.fragment_breaking_news.*
 
 
@@ -47,6 +49,12 @@ class BreakingNewsFragment : Fragment(R.layout.fragment_breaking_news) {
             findNavController().navigate(
                 R.id.action_breakingNewsFragment_to_articleFragment, bundle
             )
+
+//            nav_host_fragment.findNavController().navigate(
+//                R.id.action_breakingNewsFragment_to_articleFragment,bundle,
+//            )
+            Log.e(TAG, "Button Clicked!")
+
         }
         viewModel.breakingNews.observe(viewLifecycleOwner, Observer { response ->
             when(response) {
