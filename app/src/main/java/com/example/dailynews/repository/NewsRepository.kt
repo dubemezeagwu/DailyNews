@@ -1,6 +1,7 @@
 package com.example.dailynews.repository
 
 import com.example.dailynews.database.ArticleDatabase
+import com.example.dailynews.models.Article
 import com.example.dailynews.models.NewsResponse
 import com.example.dailynews.network.RetrofitInstance
 import retrofit2.Response
@@ -14,4 +15,10 @@ class NewsRepository (
     }
 
     suspend fun searchNews(searchQuery: String, pageNumber: Int) = RetrofitInstance.api.searchForAllNews(searchQuery,pageNumber)
+
+    suspend fun upsert (article: Article) = database.getArticlesDao().upsert(article)
+
+    fun getSavedNews () = database.getArticlesDao().getAllArticles()
+
+    suspend fun deleteArticle(article: Article) = database.getArticlesDao().deleteArticles(article)
 }

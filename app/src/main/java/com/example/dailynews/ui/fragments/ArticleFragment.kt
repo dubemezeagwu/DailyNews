@@ -10,6 +10,7 @@ import androidx.navigation.fragment.navArgs
 import com.example.dailynews.R
 import com.example.dailynews.ui.activities.NewsActivity
 import com.example.dailynews.viewmodels.NewsViewModel
+import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.fragment_article.*
 
 
@@ -32,7 +33,12 @@ class ArticleFragment : Fragment(R.layout.fragment_article) {
         val article = args.article
         fragmentArticle_web_view.apply {
             webViewClient = WebViewClient()
-            loadUrl(article.url)
+            article.url?.let { loadUrl(it) }
+        }
+
+        fab.setOnClickListener {
+            viewModel.saveArticle(article)
+            Snackbar.make(view, "Article Saved Successfully.", Snackbar.LENGTH_SHORT).show()
         }
     }
 
