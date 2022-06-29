@@ -1,6 +1,7 @@
 package com.example.dailynews.ui.fragments
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -23,6 +24,7 @@ import kotlinx.android.synthetic.main.fragment_saved_news.*
 class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
     lateinit var viewModel: NewsViewModel
     lateinit var newsAdapter: NewsAdapter
+    private val  TAG = "SavedNewsFragment"
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -70,6 +72,19 @@ class SavedNewsFragment : Fragment(R.layout.fragment_saved_news) {
 
         ItemTouchHelper(itemTouchHelperCallback).apply {
             attachToRecyclerView(savedNews_recycler_view)
+        }
+
+
+        newsAdapter.setOnItemClickListener {
+            var bundle: Bundle = Bundle().apply {
+                putSerializable("article", it)
+            }
+            findNavController().navigate(
+                R.id.action_savedNewsFragment_to_articleFragment, bundle
+            )
+
+            Log.e(TAG, "Button Clicked!")
+
         }
 
         viewModel.getSavedNews().observe(viewLifecycleOwner, Observer {
