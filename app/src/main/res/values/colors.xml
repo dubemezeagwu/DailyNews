@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="off_white">#F6F6F6</color>
+    <color name="ivory">#E6E6D8</color>
+    <color name="golden_yellow">#E6A519</color>
 </resources>
