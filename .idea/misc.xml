@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1354916067146283" />
+        <entry key="app/src/main/res/drawable/custom_input.xml" value="0.304" />
         <entry key="app/src/main/res/drawable/ic_baseline_breaking_news.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/drawable/ic_baseline_saved_news.xml" value="0.18385416666666668" />
         <entry key="app/src/main/res/layout/activity_news.xml" value="0.16770833333333332" />
@@ -11,7 +12,7 @@
         <entry key="app/src/main/res/layout/fragment_article.xml" value="0.31987915039062503" />
         <entry key="app/src/main/res/layout/fragment_breaking_news.xml" value="0.2947916666666667" />
         <entry key="app/src/main/res/layout/fragment_saved_news.xml" value="0.2947916666666667" />
-        <entry key="app/src/main/res/layout/fragment_search_news.xml" value="0.2555205047318612" />
+        <entry key="app/src/main/res/layout/fragment_search_news.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_article_preview.xml" value="0.22" />
         <entry key="app/src/main/res/menu/bottom_navigation_menu.xml" value="0.16770833333333332" />
       </map>
